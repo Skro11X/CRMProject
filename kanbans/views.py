@@ -1,6 +1,5 @@
-from django.shortcuts import render
-from django.views.generic import DetailView
-from kanbans.models import Kanban, KanbanField
+from django.views.generic import DetailView, ListView
+from kanbans.models import Kanban
 from leads.models import Lead
 
 
@@ -16,3 +15,9 @@ class KanbanDetail(DetailView):
         for lead in list_of_leads:
             kanban_columns.setdefault(lead.kanban_field.position).append(lead)
         return kanban_columns
+
+
+class KanbanList(ListView):
+    model = Kanban
+    template_name = "kanban_lists.html"
+    context_object_name = "kanbans_list"
