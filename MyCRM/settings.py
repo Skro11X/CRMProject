@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'kanbans',
     'leads',
+    'users',
 ]
 
 MIDDLEWARE = [
@@ -102,6 +103,12 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+
+
+LOGIN_REDIRECT_URL = 'list/'
+LOGOUT_REDIRECT_URL = 'list/'
+# todo создать дефолтную страницу.
+AUTH_USER_MODEL = 'users.User'
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/

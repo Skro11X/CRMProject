@@ -22,3 +22,5 @@ class KanbanField(models.Model):
         verbose_name = "Field"
         verbose_name_plural = "Fields"
         unique_together = [["position", "kanban"]]
+
+        #todo сделать реализацию прав через поле модели которое будет генерироваться на основе название по которому будет проверяться доступ к конкретному канбану
